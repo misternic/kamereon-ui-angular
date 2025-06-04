@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KamereonUiAngular } from './kamereon-ui-angular';
+import { KamereonButton } from './kamereon-button';
 
-describe('KamereonUiAngular', () => {
-  let component: KamereonUiAngular;
-  let fixture: ComponentFixture<KamereonUiAngular>;
+describe('KamereonButton', () => {
+  let component: KamereonButton;
+  let fixture: ComponentFixture<KamereonButton>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KamereonUiAngular]
+      imports: [KamereonButton]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KamereonUiAngular);
+    fixture = TestBed.createComponent(KamereonButton);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

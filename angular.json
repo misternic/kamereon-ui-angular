@@ -107,7 +107,12 @@
       "projectType": "library",
       "root": "projects/kamereon-ui-angular",
       "sourceRoot": "projects/kamereon-ui-angular/src",
-      "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "prefix": "kamereon",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
@@ -125,10 +130,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/kamereon-ui-angular/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

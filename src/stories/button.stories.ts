@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { ButtonComponent } from './button.component';
+import { KamereonButton } from '../../projects/kamereon-ui-angular/src/lib/kamereon-button/kamereon-button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<KamereonButton> = {
   title: 'Example/Button',
-  component: ButtonComponent,
+  component: KamereonButton,
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: {
@@ -18,7 +18,7 @@ const meta: Meta<ButtonComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<KamereonButton>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
