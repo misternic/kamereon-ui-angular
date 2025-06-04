@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kamereon-ui-angular": {
+    "kamereon-ui-angular-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,9 +18,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -29,9 +27,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -61,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kamereon-ui-angular:build:production"
+              "buildTarget": "kamereon-ui-angular-app:build:production"
             },
             "development": {
-              "buildTarget": "kamereon-ui-angular:build:development"
+              "buildTarget": "kamereon-ui-angular-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,10 +71,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -87,16 +80,14 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
         },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "kamereon-ui-angular:build",
+            "browserTarget": "kamereon-ui-angular-app-sample:build",
             "compodoc": false,
             "port": 6006
           }
@@ -105,9 +96,39 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "kamereon-ui-angular:build",
+            "browserTarget": "kamereon-ui-angular-app-sample:build",
             "compodoc": false,
             "outputDir": "storybook-static"
+          }
+        }
+      }
+    },
+    "kamereon-ui-angular": {
+      "projectType": "library",
+      "root": "projects/kamereon-ui-angular",
+      "sourceRoot": "projects/kamereon-ui-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/kamereon-ui-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/kamereon-ui-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/kamereon-ui-angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

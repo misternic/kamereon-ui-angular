@@ -6,6 +6,11 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "kamereon-ui-angular": [
+        "./dist/kamereon-ui-angular"
+      ]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -29,6 +34,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/kamereon-ui-angular/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/kamereon-ui-angular/tsconfig.spec.json"
     }
   ]
 }
