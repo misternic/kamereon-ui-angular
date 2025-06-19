@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run kamereon-ui-angular-app:storybook",
-    "build-storybook": "ng run kamereon-ui-angular-app:build-storybook"
+    "build-storybook": "ng run kamereon-ui-angular-app:build-storybook",
+    "build-library": "ng build kamereon-ui-angular"
   },
   "private": true,
   "dependencies": {
