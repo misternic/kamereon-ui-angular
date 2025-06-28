@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
 import { KamereonButton } from '../../projects/kamereon-ui-angular/src/lib/kamereon-button/kamereon-button';
+import { variantOptions } from '../../projects/kamereon-ui-angular/src/lib/types/variants';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<KamereonButton> = {
@@ -9,12 +10,13 @@ const meta: Meta<KamereonButton> = {
   component: KamereonButton,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: {
-      control: 'color',
+    variant: {
+      control: 'select',
+      options: variantOptions,
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: { variant: 'primary', onClick: fn() },
 };
 
 export default meta;
@@ -31,6 +33,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     label: 'Button',
+    variant: 'secondary',
   },
 };
 

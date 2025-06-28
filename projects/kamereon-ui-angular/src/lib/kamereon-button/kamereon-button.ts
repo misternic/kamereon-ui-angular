@@ -10,13 +10,18 @@ import { Variant } from '../types/variants';
 export class KamereonButton {
   label = input('');
   primary = input(false);
-  size = input('medium', { transform: (value: string) => value.toLowerCase() });
-  backgroundColor = input<Variant>('primary');
+  size = input('sm', { transform: (value: string) => value.toLowerCase() });
+  variant = input<Variant>('primary');
 
   onClick = output();
 
   variantCssClass = computed(() => {
-    const variant = this.backgroundColor();
+    const variant = this.variant();
     return `btn-${variant}`;
+  });
+
+  sizeCssClass = computed(() => {
+    const size = this.size();
+    return `btn-${size}`;
   });
 }

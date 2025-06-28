@@ -97,7 +97,6 @@
             "compodoc": false,
             "port": 6006,
             "styles": [
-              ".storybook/tailwind.css",
               "src/styles.scss",
               "node_modules/kamereon-ui-angular/src/assets/styles/main.scss"
             ]
