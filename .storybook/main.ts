@@ -5,7 +5,12 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-docs',
-    'storybook-addon-sass-postcss',
+    {
+      name: 'storybook-addon-sass-postcss',
+      options: {
+        loadSassAfterPostCSS: true,
+      },
+    },
   ],
   framework: {
     name: '@storybook/angular',

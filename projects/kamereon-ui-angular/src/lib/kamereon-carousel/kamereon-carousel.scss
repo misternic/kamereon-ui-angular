@@ -1,0 +1,136 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-track {
+  position: relative;
+  width: 60%;
+  height: 350px;
+  overflow: auto;
+}
+
+.carousel-item {
+  //position: absolute;
+  top: 0;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f3f4f683;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.carousel-item.center {
+  opacity: 1;
+  //transform: scale(1.5) translateX(0);
+  z-index: 3;
+}
+
+.carousel-item.left {
+  opacity: 1;
+  //transform: scale(1) translateX(-100%);
+  z-index: 2;
+}
+
+.carousel-item.right {
+  opacity: 1;
+  //transform: scale(1) translateX(100%);
+  z-index: 2;
+}
+
+.carousel-item.fade-out-left {
+  opacity: 1;
+  //transform: scale(1) translateX(-100%);
+  animation: fadeOutLeft 0.5s forwards;
+  z-index: 1;
+}
+
+.carousel-item.fade-in-right {
+  opacity: 0;
+  //transform: scale(1) translateX(200%);
+  animation: fadeInRight 0.5s forwards;
+  z-index: 1;
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateX(-200%);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: scale(1) translateX(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(100%);
+  }
+}
+
+.carousel-item.fade-out-right {
+  opacity: 1;
+  transform: scale(1) translateX(100%);
+  animation: fadeOutRight 0.5s forwards;
+  z-index: 1;
+}
+
+.carousel-item.fade-in-left {
+  opacity: 0;
+  transform: scale(1) translateX(-200%);
+  animation: fadeInLeft 0.5s forwards;
+  z-index: 1;
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateX(200%);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: scale(1) translateX(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(-100%);
+  }
+}
+
+.carousel-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav {
+  cursor: pointer;
+  font-size: 2rem;
+  user-select: none;
+  padding: 0 20px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.nav.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}

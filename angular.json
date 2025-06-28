@@ -83,7 +83,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss",
+              "node_modules/kamereon-ui-angular/src/assets/styles/main.scss"
+            ]
           }
         },
         "storybook": {
@@ -94,6 +97,7 @@
             "compodoc": false,
             "port": 6006,
             "styles": [
+              ".storybook/tailwind.css",
               "src/styles.scss",
               "node_modules/kamereon-ui-angular/src/assets/styles/main.scss"
             ]
@@ -106,7 +110,10 @@
             "browserTarget": "kamereon-ui-angular-app:build",
             "compodoc": false,
             "outputDir": "storybook-static",
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss",
+              "node_modules/kamereon-ui-angular/src/assets/styles/main.scss"
+            ]
           }
         }
       }

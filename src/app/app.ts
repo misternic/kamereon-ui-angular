@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { KamereonButton } from '../../projects/kamereon-ui-angular/src/lib/kamereon-button/kamereon-button';
+import { KamereonButton } from 'kamereon-ui-angular';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, KamereonButton],
+  imports: [KamereonButton],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

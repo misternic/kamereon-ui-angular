@@ -1,0 +1,22 @@
+<div class="carousel">
+  <div class="nav left" [class.disabled]="isPrevDisabled()" (click)="prev()">
+    ‹
+  </div>
+
+  <div class="carousel-track">
+    @for (item of items; track item; let i = $index) {
+    <div [class]="'carousel-item ' + getPosition(i)">
+      @if (itemTemplate) {
+      <ng-container
+        [ngTemplateOutlet]="itemTemplate"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      ></ng-container>
+      } @else { {{ item }} }
+    </div>
+    }
+  </div>
+
+  <div class="nav right" [class.disabled]="isNextDisabled()" (click)="next()">
+    ›
+  </div>
+</div>
