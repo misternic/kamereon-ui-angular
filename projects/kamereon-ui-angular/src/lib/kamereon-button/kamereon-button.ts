@@ -1,5 +1,6 @@
 import { Component, computed, input, output } from '@angular/core';
 import { Variant } from '../types/variants';
+import { Size } from '../types/size';
 
 @Component({
   selector: 'kamereon-button',
@@ -9,19 +10,36 @@ import { Variant } from '../types/variants';
 })
 export class KamereonButton {
   label = input('');
-  primary = input(false);
-  size = input('sm', { transform: (value: string) => value.toLowerCase() });
-  variant = input<Variant>('primary');
+  disabled = input<boolean | null>(null);
+
+  size = input<Size>('medium');
+  variant = input<Variant>('default');
+  softButton = input(false);
 
   onClick = output();
 
-  variantCssClass = computed(() => {
+  cssClasses = computed(() => {
     const variant = this.variant();
-    return `btn-${variant}`;
-  });
-
-  sizeCssClass = computed(() => {
     const size = this.size();
-    return `btn-${size}`;
+    const softButton = this.softButton();
+
+    return {
+      btn: true,
+      'btn-neutral': variant === 'neutral',
+      'btn-primary': variant === 'primary',
+      'btn-secondary': variant === 'secondary',
+      'btn-accent': variant === 'accent',
+      'btn-info': variant === 'info',
+      'btn-success': variant === 'success',
+      'btn-warning': variant === 'warning',
+      'btn-error': variant === 'error',
+
+      'btn-soft': softButton,
+
+      'btn-xs': size === 'extra-small',
+      'btn-sm': size === 'small',
+      'btn-lg': size === 'large',
+      'btn-xl': size === 'extra-large',
+    };
   });
 }
