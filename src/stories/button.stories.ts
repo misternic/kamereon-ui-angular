@@ -26,6 +26,7 @@ const meta: Meta<KamereonButton> = {
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
     label: 'Button',
+    isLoading: false,
     onClick: fn(),
   },
 };
@@ -99,5 +100,13 @@ export const Disabled: Story = {
   args: {
     ...meta.args,
     disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    ...meta.args,
+    label: 'Loading...',
+    isLoading: true,
   },
 };

@@ -15,6 +15,7 @@ export class KamereonButton {
   size = input<Size>('medium');
   variant = input<Variant>('default');
   softButton = input(false);
+  isLoading = input(false);
 
   onClick = output();
 
@@ -40,6 +41,21 @@ export class KamereonButton {
       'btn-sm': size === 'small',
       'btn-lg': size === 'large',
       'btn-xl': size === 'extra-large',
+    };
+  });
+
+  loadingSpinnerClasses = computed(() => {
+    const variant = this.variant();
+    const size = this.size();
+
+    return {
+      loading: this.isLoading(),
+      'loading-spinner': this.isLoading(),
+
+      'loading-xs': size === 'extra-small',
+      'loading-sm': size === 'small',
+      'loading-lg': size === 'large',
+      'loading-xl': size === 'extra-large',
     };
   });
 }
