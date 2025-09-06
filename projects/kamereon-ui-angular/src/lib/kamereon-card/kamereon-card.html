@@ -1,18 +1,26 @@
 <div class="card bg-base-100 w-96 shadow-sm">
-  @if (image(); as image) {
-  <figure>
-    <img src="{{ image }}" alt="TODO" />
-  </figure>
-  }
-  <div class="card-body">
-    @if (title(); as title) {
-    <h2 class="card-title">{{ title }}</h2>
-    } @if (content(); as content) {
-    <p>{{ content }}</p>
-    } @if (action(); as action) {
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">{{ action }}</button>
-    </div>
-    }
-  </div>
+	@if (image(); as image) {
+	<figure>
+		<img src="{{ image }}" alt="TODO" />
+	</figure>
+	}
+	<ng-content select="[card-image]"></ng-content>
+	<div class="card-body">
+		@if (title(); as title) {
+		<h2 class="card-title">{{ title }}</h2>
+		}
+		<ng-content select="[card-title]"></ng-content>
+
+		@if (content(); as content) {
+		<p>{{ content }}</p>
+		}
+		<ng-content select="[card-content]"></ng-content>
+
+		<div class="card-actions justify-end">
+			@if (action(); as action) {
+			<button class="btn btn-primary">{{ action }}</button>
+			}
+			<ng-content select="[card-action]"></ng-content>
+		</div>
+	</div>
 </div>

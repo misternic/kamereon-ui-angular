@@ -1,17 +1,17 @@
 {
-  "name": "kamereon-ui-angular",
-  "version": "0.0.3-alpha1",
-  "peerDependencies": {
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "@tailwindcss/postcss": "^4.1.10",
-    "daisyui": "5.0.43",
-    "postcss": "^8.5.6",
-    "@tailwindcss/cli": "^4.1.10",
-    "tailwindcss": "^4.1.10"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "sideEffects": false
+	"name": "kamereon-ui-angular",
+	"version": "0.0.3-alpha4",
+	"peerDependencies": {
+		"@angular/common": "^20.0.0",
+		"@angular/core": "^20.0.0",
+		"@tailwindcss/postcss": "^4.1.10",
+		"daisyui": "5.0.43",
+		"postcss": "^8.5.6",
+		"@tailwindcss/cli": "^4.1.10",
+		"tailwindcss": "^4.1.10"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	},
+	"sideEffects": false
 }

@@ -11,7 +11,7 @@
 
 ```
 npm run build
-npm publish dist/kamereon-ui-angular
+npm publish ./dist/kamereon-ui-angular
 ```
 
 ## use kameraon in angular
