@@ -1,0 +1,11 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+ 
+import * as ButtonStories from '../button.stories';
+ 
+<Meta of={ButtonStories} />
+ 
+<div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(140px,1fr))', gap:'12px' }}>
+{Object.values(ButtonStories).filter(([k, v]) => k !== 'default' && (v.args || v.render)).map((story, i) => ( <Story key={i} of={story} /> ))}
+</div
+
+>

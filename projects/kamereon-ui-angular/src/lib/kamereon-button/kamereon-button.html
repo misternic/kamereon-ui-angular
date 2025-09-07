@@ -1,12 +1,13 @@
-<button
-  [class]="cssClasses()"
-  [disabled]="disabled()"
-  (click)="onClick.emit()"
-  [attr.data-label]="label()"
->
-  <span class="content">
-    @if (isLoading(); as isLoading) {
-    <span [class]="loadingSpinnerClasses()"></span>
-    } @else { {{ label() }} }
-  </span>
+<button [class]="cssClasses()" [disabled]="disabled()" (click)="onClick.emit()">
+	<span class="content">
+		@if (isLoading(); as isLoading) {
+		<span [class]="loadingSpinnerClasses()"></span>
+		}
+		<span class="label" [class.hidden-label]="isLoading()">
+			@if (icon(); as icon) {
+			<kamereon-icon [name]="icon"></kamereon-icon>
+			} {{ label() }}
+			<ng-content></ng-content>
+		</span>
+	</span>
 </button>

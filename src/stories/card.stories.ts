@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from 'storybook/test';
 
 import { KamereonCard } from '../../projects/kamereon-ui-angular/src/lib/kamereon-card/kamereon-card';
-import { variantOptions } from '../../projects/kamereon-ui-angular/src/lib/types/variants';
-import { sizeOptions } from '../../projects/kamereon-ui-angular/src/lib/types/size';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<KamereonCard> = {
@@ -28,7 +25,9 @@ export const Default: Story = {
       <kamereon-card>
         <img card-image src="https://picsum.photos/400/200" alt="Demo" />
         <h2 card-title class="card-title">Demo Title</h2>
-        <p card-content>Some description text for the card.</p>
+        <p card-content>
+			<kamereon-button variant="primary" size="md">Click Me</kamereon-button>
+		</p>
       </kamereon-card>
     `,
 	}),

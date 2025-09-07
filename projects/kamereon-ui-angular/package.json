@@ -1,6 +1,6 @@
 {
 	"name": "kamereon-ui-angular",
-	"version": "0.0.3-alpha4",
+	"version": "0.0.3-alpha5",
 	"peerDependencies": {
 		"@angular/common": "^20.0.0",
 		"@angular/core": "^20.0.0",

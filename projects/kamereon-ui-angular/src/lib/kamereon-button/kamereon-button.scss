@@ -6,17 +6,21 @@ button {
 	position: relative;
 	display: inline-block;
 
-	&::before {
-		content: attr(data-label);
-		visibility: hidden; // bleibt im Layout, ist aber unsichtbar
-		white-space: nowrap; // verhindert Umbruch -> Breite = Labelbreite
-		display: inline-block;
-	}
-
 	.content {
-		position: absolute;
-		inset: 0;
 		display: grid;
 		place-items: center;
+	}
+
+	.label {
+		grid-area: 1 / 1;
+		white-space: nowrap;
+	}
+
+	.hidden-label {
+		visibility: hidden;
+	}
+
+	.loading-spinner {
+		grid-area: 1 / 1;
 	}
 }

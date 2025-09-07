@@ -1,0 +1,16 @@
+import { Meta, IconGallery, IconItem, Story } from '@storybook/addon-docs/blocks';
+
+import * as IconStories from './stories/icon.stories';
+ 
+<Meta title="Iconography" />
+ 
+# Iconography
+
+<Story of={IconStories.Default} />
+<Story of={IconStories.ExtraLarge} />
+
+{Object.entries(IconStories)
+  .filter(([key]) => key !== 'default')
+  .map(([name, story]) => (
+    <Story name={name} of={IconStories[name]} />
+  ))}

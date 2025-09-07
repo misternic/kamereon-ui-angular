@@ -8,7 +8,8 @@ npm install tailwindcss @tailwindcss/postcss postcss
 npm install storybook-addon-sass-postcss
 
 npm login
-npm run build-library
-cd .\dist\kamereon-ui-angular\
-npm publish
+npm run build
+npm publish ./dist/kamereon-ui-angular
+
+npm install prettier prettier-plugin-tailwindcss prettier-plugin-organize-imports --save-dev
 ```
