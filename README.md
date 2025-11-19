@@ -45,3 +45,9 @@ ng g c NeueComponent
 
 ```
 
+## build docker image for publishing storybook static
+
+```
+docker build -t gitea.home/udomi/kamereon-ui-angular-storybook .
+docker run -dit -p 8080:80 --name kamereon-ui-angular-storybook --restart unless-stopped gitea.home/udomi/kamereon-ui-angular-storybook
+```

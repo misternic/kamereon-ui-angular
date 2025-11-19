@@ -1,0 +1,35 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+    - name: start
+      image: alpine
+      commands:
+          - echo Start Pipeline ⛏
+          - date
+    - name: docker
+      image: plugins/docker
+      settings:
+          registry:
+              from_secret: docker_registry
+          username:
+              from_secret: docker_username
+          password:
+              from_secret: docker_password
+          repo:
+              from_secret: docker_repo
+          insecure: true
+          tags:
+              - latest
+              - main
+    - name: send telegram notification
+      image: appleboy/drone-telegram
+      settings:
+          token:
+              from_secret: telegram_token
+          to: -4732485035
+      when:
+          status:
+              - success
+              - failure
